@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Submissão de Formulário</title>
 </head>
 
 <body>
@@ -15,21 +15,22 @@
         //$_GET é uma supervariavel que recebe informações do formulário via get
         //$_POST é uma supervariavel que recebe informações do formulário via post
 
-        echo "Nome: " . $_POST['nome'] . " " . $_POST['sobrenome'] . "<br> Altura: " . $_POST['altura'] / 100;
-        echo "m";
+        echo "<h1 style=\"color: #0051ff;\">Dados Recebidos</h1>";
+        echo "Nome completo: " . $_POST['nome'] . " " . $_POST['sobrenome'] . "<br>";
+        echo "Altura: " . $_POST['altura'] / 100 . " m e Peso: " . $_POST['peso'] . " kg" . "<br>";
         $dataSelecionada = $_POST["nascimento"];
-        echo "<br>Data Original: " . $dataSelecionada;
+        echo "<br>Data de Nascimento: " . $dataSelecionada;
         $date = new DateTime($dataSelecionada);
         $date2 = new DateTime();
         $idade = $date->diff($date2);
-        echo "<br>Idade: " . $idade->format('%Y Anos');
+        echo "Idade: " . $idade->format('%Y Anos');
         $date->modify('30 minutes');
         $dataBrasileira = $date->format('d/m/y h:i:s');
         echo "<br>Data de Nascimento: " . $dataBrasileira;
         if ($_POST['sexo'] != "definir" && isset($_POST['horario']) && isset($_POST['area']) && !empty($_FILES['arquivo']['name'])) {
-            echo "<br> Sexo: <br>" . $_POST['sexo'] . "<br>";
-            echo "Horario disponivel: <br> " . $_POST['horario'] . "<br>";
-            echo "Areas de Interesse";
+            echo "<br> Sexo: " . $_POST['sexo'];
+            echo "<br>Horário(s) disponível(is): " . $_POST['horario'];
+            echo "<br>Área(s) de Interesse:";
         ?>
     <ul>
         <?php
