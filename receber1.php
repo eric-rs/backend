@@ -10,7 +10,7 @@
 <body>
     <p>
         <?php
-        date_default_timezone_set('America/Sao_Paulo');
+        date_default_timezone_set('America/Bahia');
         //$_GET $_POST
         //$_GET é uma supervariavel que recebe informações do formulário via get
         //$_POST é uma supervariavel que recebe informações do formulário via post
@@ -57,7 +57,6 @@
 ?>
 </p>
 
-<a href="aula03.php">Voltar</a>
+<a href="aula03.php" style="background-color: #9209c9; color: white; padding: 10px 20px; border: none; cursor: pointer;">Voltar</a>
 </body>
-
 </html>
